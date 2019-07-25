@@ -1,7 +1,10 @@
 # merge two sorted list: solution with array
 
 def merge_two_sorted_lists(l1, l2):
-    l_merge = l1
+    l_merge = []
+    for var in l1:
+        l_merge.append(var)
+
     for j, cur_l2_val in enumerate(l2):
         for i, cur_l1_val in enumerate(l1):
             print(i, j)
