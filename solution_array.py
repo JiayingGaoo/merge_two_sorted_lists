@@ -12,16 +12,16 @@ def merge_two_sorted_lists(l1, l2):
 
     j = 0
     while 1:
-        print('j =', j)
         cur_l2_val = l2[j]
         print("cur_l2_val = ", cur_l2_val)
         print("cur_l_merge:", l_merge)
+
         # look the potential position of cur_l2_val in l_merge
         at_the_edge = False
         if cur_l2_val < l_merge[0]:
             l_merge.insert(0, cur_l2_val)
             at_the_edge = True
-        if cur_l2_val > l_merge[-1]:
+        elif cur_l2_val > l_merge[-1]:
             l_merge.append(cur_l2_val)
             at_the_edge = True
 
@@ -41,8 +41,9 @@ def merge_two_sorted_lists(l1, l2):
             break
     return l_merge
 
+
 test_l1 = [1, 3, 5, 10]
-test_l2 = [2, 1000]
+test_l2 = [2, 3, 1000]
 test_merge = merge_two_sorted_lists(test_l1, test_l2)
 print(test_merge)
 
